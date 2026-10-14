@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Bancos SQLite locais
+*.db
+*.db-journal
+
+# Configurações e segredos
+.env
