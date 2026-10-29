@@ -31,4 +31,4 @@ def showTickets():
         print("Favor inserir caractere válido e tentar novamente.....\n")
         showTickets()
 
-showTickets()
+# showTickets() Para evitar a execução do modulo no momento do chamado em main.py

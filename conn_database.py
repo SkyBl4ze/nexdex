@@ -33,4 +33,4 @@ def writeDataBase():
     connect.close()
 
 connection()
-writeDataBase()
+writeDataBase() #Provavél necessidade de comentar depois, pois é executada na chamada do módulo em main.py

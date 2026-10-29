@@ -11,8 +11,8 @@ def openTicket():
     solicitante = input("Solicitante: \n")
     tecnico = input("Técnico responsável: \n")
     comentarios = input("Comentários: \n")
-    status = int(input("Status 0 - Não resolvido 1 - Resolvido \n"))
-    idChamado = int(input("ID do chamado: \n"))
+    # status = int(input("Status 0 - Não resolvido 1 - Resolvido \n"))
+    # idChamado = int(input("ID do chamado: \n"))
 
     #A conexão com a base de dados é realizada novamente
     connect = connection()
@@ -27,12 +27,10 @@ def openTicket():
                 prioridade,
                 solicitante,
                 tecnico,
-                comentarios,
-                status,
-                id
-            ) VALUES(?,?,?,?,?,?,?,?)
+                comentarios
+            ) VALUES(?,?,?,?,?,?)
         '''
-    ),(titulo,categoria,prioridade,solicitante,tecnico,comentarios,status,idChamado))
+    ),(titulo,categoria,prioridade,solicitante,tecnico,comentarios))
     #Mentira! só muda que agora no método execute, passamos um novo parâmetro, que 
     # contém as variavéis que foram armazenadas na entrada da função, associado elas
     # com seu correspondente na nossa tabela.
@@ -42,6 +40,11 @@ def openTicket():
     # commita as alterações na base de dados. 
     connect.commit()
     #fecha a conexão
-    connect.close()
+    # connect.close()
 
-openTicket()
+    idChamado = cursor.lastrowid
+
+    print(f"Chamado #{idChamado} Registrado!")
+
+
+# openTicket() Para evitar a execução do modulo no momento do chamado em main.py

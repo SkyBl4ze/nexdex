@@ -16,9 +16,7 @@ def editTicket():
         
         databaseId = cursor.execute(
                 '''
-                    SELECT id FROM TabelaTestes(
-                        id    
-                    )
+                    SELECT id FROM TabelaTestes
         
                 '''
             )
@@ -71,4 +69,4 @@ def editTicket():
 
 
 
-editTicket()
+# editTicket() Para evitar a execução do modulo no momento do chamado em main.py
