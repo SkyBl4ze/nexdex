@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}NexDex{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{
+        url_for('static', filename='css/style.css')
+    }}">
+     <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-cube"></i>
+            <span>NexDex</span>
+        </div>
+        <nav>
+            <p class="nav-label">MENU-PRINCIPAL</p>
+            <a href="/" class="nav-item active">
+                <i class="fa-solid fa-chart-pie"></i>
+                Dashboard
+            </a>
+             <a href="/" class="nav-item">
+                <i class="fa-solid fa-ticket"></i>
+                Chamados
+            </a>
+             <a href="/" class="nav-item">
+                <i class="fa-solid fa-plus"></i>
+                Novo Chamado
+            </a>
+            <p class="nav-label">GERENCIAMENTO</p>
+            
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                Usuários
+            </a>
+             <a href="/" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                Relatórios
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>Administrador</span>
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js')}}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script> -->
+
+</body>
+</html>

@@ -1,12 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-</head>
-<body>
-    <h1>Hello World!!!</h1>
-    <h3>From Python Flask!</h3>
-</body>
-</html>
+{% extends "base.html"%}
+
+{% block title%}Dashboard | NexDex{% endblock %}
+
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <h1>
+            Dashboard
+        </h1>
+        <p>
+            Visão geral do suporte técnico
+        </p>
+    </div>
+    <button class="new-ticket">
+        <i class="fa-solid fa-plus"></i>
+        Novo Chamado
+    </button>
+</header>
+
+<section class="stats-grid">
+
+     <div class="stat-card">
+        <div class="stat-icon blue">
+            <i class="fa-solid fa-ticket"></i>
+        </div>
+        <p>Total de chamados</p>
+        <h2>0</h2>
+        <span>Chamados registrados</span>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon orange">
+            <i class="fa-solid fa-clock"></i>
+        </div>
+        <p>Em andamento</p>
+        <h2>0</h2>
+        <span>Aguardando resolução</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon green">
+            <i class="fa-solid fa-check-circle"></i>
+        </div>
+        <p>Concluídos</p>
+        <h2>0</h2>
+        <span>Chamados finalizados</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon red">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <p>Alta prioridade</p>
+        <h2>0</h2>
+        <span>Precisam de atenção</span>
+    </div>
+
+</section>
+
+<section class="content-panel">
+    <div class="panel-header">
+        <div>
+            <h2>Chamados recentes</h2>
+            <p>Acompanhe as últimas solicitações</p>
+        </div>
+
+        <a href="#">Ver todos</a>
+    </div>
+
+    <div class="empty-state">
+        <i class="fa-solid fa-inbox"></i>
+        <h3>Nenhum chamado encontrado</h3>
+        <p>Os chamados registrados aparecerão aqui.</p>
+    </div>
+</section>
+
+{% endblock %}
